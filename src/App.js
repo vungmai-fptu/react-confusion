@@ -1,22 +1,44 @@
-import React from 'react'
-import { Navbar, NavbarBrand } from 'reactstrap';
-import { Component } from 'react'
-import Menu from './components/MenuComponent';
+import React, { Component } from 'react';
 import Main from './components/MainComponent';
-import { DISHES } from './shared/dishes';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
 
-  render() {
+  render() {  
     return (
-      <div className="App">
-        <Main />
-      </div>
+        // adding BrowserRouter. the application now is congigured to make use of the react router
+        <BrowserRouter>
+            <div className="App">
+                <Main /> 
+            </div>
+        </BrowserRouter>
     );
   }
 }
 
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
 
-export default App
+export default App;
+
+
+
