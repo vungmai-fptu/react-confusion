@@ -11,7 +11,7 @@
 }
 
 .footer {
-    background-color: #d1c4e9;
+    background-color: #EED6D3;
     margin: 0px auto;
     padding: 20px 0px 20px 0px;
 }
@@ -19,7 +19,7 @@
 .jumbotron {
     padding: 70px 30px 70px 30px;
     margin: 0px auto;
-    background: #9575cd;
+    background: #E8B4B8 !important;
     color: floralwhite;
 }
 
@@ -30,5 +30,9 @@ address {
 }
 
 .navbar-dark {
-    background-color: #512da8;
+    background-color: #67595E;
+}
+
+.card-header {
+    background-color: #67595E !important;
 }
