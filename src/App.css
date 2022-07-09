@@ -30,9 +30,9 @@ address {
 }
 
 .navbar-dark {
-    background-color: #67595E;
+    background-color: #000;
 }
 
 .card-header {
-    background-color: #67595E !important;
+    background-color: #000 !important;
 }
