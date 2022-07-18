@@ -102,7 +102,7 @@ class CommentForm extends Component {
     }
 }
 
-function RenderComments({ comments, addComment, dishId }) {
+function RenderComments({ comments, postComment, dishId }) {
     if (comments != null) {
         return (
             <div className="col-12 col-md-5 m-1">
@@ -121,7 +121,7 @@ function RenderComments({ comments, addComment, dishId }) {
                     })}
 
                 </ul>
-                <CommentForm dishId={dishId} addComment={addComment} />
+                <CommentForm dishId={dishId} postComment={postComment} />
             </div>);
     } else {
         return (

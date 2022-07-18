@@ -6,47 +6,41 @@ export const addComment = (comment) => ({
     payload: comment
 });
 
-export const postComment = (dishId, rating, comment) => (dispatch) => {
+export const postComment = (dishId, rating, author, comment) => (dispatch) => {
 
     const newComment = {
-        dish: dishId,
+        dishId: dishId,
         rating: rating,
+        author: author,
         comment: comment
-    }
-    console.log('Comment ', newComment);
-
-    const bearer = 'Bearer ' + localStorage.getItem('token');
+    };
+    newComment.date = new Date().toISOString();
 
     return fetch(baseUrl + 'comments', {
-        method: 'POST',
+        method: "POST",
         body: JSON.stringify(newComment),
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': bearer
+            "Content-Type": "application/json"
         },
-        credentials: 'same-origin'
+        credentials: "same-origin"
     })
         .then(response => {
             if (response.ok) {
                 return response;
-            }
-            else {
+            } else {
                 var error = new Error('Error ' + response.status + ': ' + response.statusText);
                 error.response = response;
                 throw error;
             }
         },
             error => {
-                var errmess = new Error(error.message);
-                throw errmess;
+                throw error;
             })
         .then(response => response.json())
         .then(response => dispatch(addComment(response)))
-        .catch(error => {
-            console.log('Post comments ', error.message);
-            alert('Your comment could not be posted\nError: ' + error.message);
-        })
-}
+        .catch(error => { console.log('post comments', error.message); alert('Your comment could not be posted\nError: ' + error.message); });
+};
+
 
 export const fetchDishes = () => (dispatch) => {
 
