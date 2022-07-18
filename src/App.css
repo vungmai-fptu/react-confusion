@@ -11,7 +11,7 @@
 }
 
 .footer {
-    background-color: #EED6D3;
+    background-color: #eed6d3;
     margin: 0px auto;
     padding: 20px 0px 20px 0px;
 }
@@ -19,7 +19,7 @@
 .jumbotron {
     padding: 70px 30px 70px 30px;
     margin: 0px auto;
-    background: #E8B4B8 !important;
+    background: #e8b4b8 !important;
     color: floralwhite;
 }
 
@@ -35,4 +35,26 @@ address {
 
 .card-header {
     background-color: #2e0e13 !important;
+}
+
+.page-enter {
+    opacity: 0.01;
+    transform: translateX(-100%);
+}
+
+.page-enter-active {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all 300ms ease-in;
+}
+
+.page-exit {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.page-exit-active {
+    opacity: 0.01;
+    transform: translateX(100%);
+    transition: all 300ms ease-out;
 }
